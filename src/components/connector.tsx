@@ -60,6 +60,7 @@ const Connector = ({
   });
 
   const { x, y } = currentMatchPosition;
+  return null
   return (
     <>
       {previousTopMatchPosition && (
