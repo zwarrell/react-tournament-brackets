@@ -1,3 +1,4 @@
+import { Participant } from 'types';
 export declare const Wrapper: import("styled-components").StyledComponent<"div", any, {}, never>;
 export declare const TopText: import("styled-components").StyledComponent<"p", any, {}, never>;
 export declare const BottomText: import("styled-components").StyledComponent<"p", any, {}, never>;
@@ -10,6 +11,7 @@ export declare const Score: import("styled-components").StyledComponent<"div", a
 interface SideProps {
     won?: boolean;
     hovered?: boolean;
+    team?: Participant;
 }
 export declare const Side: import("styled-components").StyledComponent<"div", any, SideProps, never>;
 interface LineProps {

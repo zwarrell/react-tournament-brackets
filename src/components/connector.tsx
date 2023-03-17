@@ -20,6 +20,7 @@ const Connector = ({
     width,
   } = getCalculatedStyles(style);
 
+
   const pathInfo = multiplier => {
     const middlePointOfMatchComponent = boxHeight / 2;
     const previousMatch =
@@ -59,11 +60,19 @@ const Connector = ({
     bracketSnippet,
   });
 
+  let lHideTopMatch = false
+  if (bracketSnippet.previousTopMatch) {
+    lHideTopMatch = bracketSnippet.previousTopMatch.lHideMatch
+  }
+  let lHideBottomMatch = false 
+  if (bracketSnippet.previousBottomMatch) {
+    lHideBottomMatch = bracketSnippet.previousBottomMatch.lHideMatch
+  }
+  
   const { x, y } = currentMatchPosition;
-  return null
   return (
     <>
-      {previousTopMatchPosition && (
+      {previousTopMatchPosition && !lHideTopMatch && (
         <path
           d={pathInfo(-1).join(' ')}
           id={`connector-${x}-${y}-${-1}`}
@@ -71,7 +80,7 @@ const Connector = ({
           stroke={topHighlighted ? connectorColorHighlight : connectorColor}
         />
       )}
-      {previousBottomMatchPosition && (
+      {previousBottomMatchPosition && !lHideBottomMatch && (
         <path
           d={pathInfo(1).join(' ')}
           id={`connector-${x}-${y}-${1}`}

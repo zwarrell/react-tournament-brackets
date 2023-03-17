@@ -110,8 +110,8 @@ const DoubleEliminationBracket = ({
   const generate2DBracketArray = (final: Match, listOfMatches: Match[]) => {
     return final
       ? [...generateColumn([final], listOfMatches), []].filter(
-          arr => arr.length > 0
-        )
+        arr => arr.length > 0
+      )
       : [];
   };
 
@@ -190,6 +190,28 @@ const DoubleEliminationBracket = ({
                   onPartyClick,
                   matchComponent,
                 }}
+              />
+              {/* Loser bracket label */}
+              <text
+                x={160}
+                y={upperBracketDimensions.gameHeight}
+                style={{
+                  fontFamily: roundHeader.fontFamily,
+                  fontSize: `30px`,
+                  color: roundHeader.fontColor,
+                }}
+                fill="currentColor"
+                dominantBaseline="middle"
+                textAnchor="middle"
+              >
+                Loser's Bracket
+              </text>
+              <rect
+                x={25}
+                y={upperBracketDimensions.gameHeight + 30}
+                width={300}
+                height="2px"
+                fill={roundHeader.backgroundColor}
               />
               <LowerBracket
                 {...{

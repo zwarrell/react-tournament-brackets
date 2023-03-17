@@ -31,12 +31,15 @@ const Template = ({ ...args }) => {
   const finalHeight = Math.max(height - 100, 500);
   return (
     <SingleElimBracketLeaderboard
+      onMatchClick={(match) => { console.log(match) }}
       // currentRound={4}
       svgWrapper={({ children, ...props }) => (
-        <StyledSvgViewer width={finalWidth} height={finalHeight} {...props}>
+        <StyledSvgViewer width={finalWidth} height={finalHeight}
+          {...props}>
           {children}
         </StyledSvgViewer>
-      )}
+      )
+      }
       {...args}
     />
   );

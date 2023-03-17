@@ -538,6 +538,7 @@ export const simpleBracket: Match[] = [
         status: 'PLAYED',
         name: 'test87',
         picture: 'teamlogos/client_team_default_logo',
+        cBackgroundColor: "green"
       },
       {
         id: 'c266ef2c-eab7-4b14-b41a-03265b6dfd74',
@@ -546,6 +547,7 @@ export const simpleBracket: Match[] = [
         status: 'PLAYED',
         name: 'adamamd',
         picture: null,
+        cBackgroundColor: "red",
       },
     ],
   },
@@ -1251,6 +1253,7 @@ export const simpleBracket: Match[] = [
     tournamentRoundText: '1',
     startTime: '2021-05-30',
     state: 'SCORE_DONE',
+    lHideMatch: true,
     participants: [
       {
         id: 'bcbe20a3-82b5-4818-bb29-4c1149e9f04e',

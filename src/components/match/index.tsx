@@ -27,16 +27,23 @@ function Match({
   topText,
   topWon,
 }: MatchComponentProps) {
+
+  // Hide match component
+  if (match.lHideMatch) {
+    return null
+  }
+
+
+
   return (
-    <Wrapper>
+    <Wrapper onClick={event =>
+      onMatchClick?.({ match, topWon, bottomWon, event })
+    }>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <TopText>{topText}</TopText>
         {(match.href || typeof onMatchClick === 'function') && (
           <Anchor
             href={match.href}
-            onClick={event =>
-              onMatchClick?.({ match, topWon, bottomWon, event })
-            }
           >
             <TopText>Match Details</TopText>
           </Anchor>
@@ -47,6 +54,7 @@ function Match({
           onMouseEnter={() => onMouseEnter(topParty.id)}
           onMouseLeave={onMouseLeave}
           won={topWon}
+          team={topParty}
           hovered={topHovered}
           onClick={() => onPartyClick?.(topParty, topWon)}
         >
@@ -58,6 +66,7 @@ function Match({
           onMouseEnter={() => onMouseEnter(bottomParty.id)}
           onMouseLeave={onMouseLeave}
           won={bottomWon}
+          team={bottomParty}
           hovered={bottomHovered}
           onClick={() => onPartyClick?.(bottomParty, bottomWon)}
         >

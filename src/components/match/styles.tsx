@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Participant } from 'types';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -48,6 +49,7 @@ export const Score = styled.div<ScoreProps>`
 interface SideProps {
   won?: boolean;
   hovered?: boolean;
+  team?: Participant;
 }
 export const Side = styled.div<SideProps>`
   display: flex;
@@ -55,8 +57,7 @@ export const Side = styled.div<SideProps>`
   align-items: center;
   justify-content: space-between;
   padding: 0 0 0 1rem;
-  background: ${({ theme, won }: any) =>
-    won ? theme.matchBackground.wonColor : theme.matchBackground.lostColor};
+  background: ${({ theme, team }: any) => team.cBackgroundColor || theme.matchBackground.defaultColor};
 
   :first-of-type {
     border-top-right-radius: 3px;
@@ -76,11 +77,11 @@ export const Side = styled.div<SideProps>`
   transition: border-color 0.5s ${({ theme }) => theme.transitionTimingFunction};
   ${Team} {
     color: ${({ theme, won }: any) =>
-      won ? theme.textColor.highlighted : theme.textColor.dark};
+    won ? theme.textColor.highlighted : theme.textColor.dark};
   }
   ${Score} {
     color: ${({ theme, won }: any) =>
-      won ? theme.textColor.highlighted : theme.textColor.dark};
+    won ? theme.textColor.highlighted : theme.textColor.dark};
   }
   ${({ hovered, theme, won }: any) =>
     hovered &&
@@ -91,8 +92,8 @@ export const Side = styled.div<SideProps>`
       }
       ${Score} {
         color: ${won
-          ? theme.score.text.highlightedWonColor
-          : theme.score.text.highlightedLostColor};
+        ? theme.score.text.highlightedWonColor
+        : theme.score.text.highlightedLostColor};
       }
     `}
 `;

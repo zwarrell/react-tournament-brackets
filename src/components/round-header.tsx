@@ -26,12 +26,10 @@ export default function RoundHeader({
     <g>
       <rect
         x={x}
-        y={y + canvasPadding}
+        y={y + canvasPadding + roundHeader.height}
         width={width}
-        height={roundHeader.height}
+        height="2px"
         fill={roundHeader.backgroundColor}
-        rx="3"
-        ry="3"
       />
       <text
         x={x + width / 2}

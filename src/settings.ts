@@ -2,10 +2,10 @@ import { ComputedOptions, Options } from './types';
 
 export const defaultStyle: Options = {
   width: 300,
-  boxHeight: 110,
+  boxHeight: 130,
   canvasPadding: 25,
   spaceBetweenColumns: 50,
-  spaceBetweenRows: 50,
+  spaceBetweenRows: 30,
   connectorColor: 'rgb(47, 54, 72)',
   connectorColorHighlight: '#DDD',
   roundHeader: {
