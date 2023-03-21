@@ -4,8 +4,8 @@ export const defaultStyle: Options = {
   width: 300,
   boxHeight: 130,
   canvasPadding: 25,
-  spaceBetweenColumns: 50,
-  spaceBetweenRows: 30,
+  spaceBetweenColumns: 30,
+  spaceBetweenRows: 10,
   connectorColor: 'rgb(47, 54, 72)',
   connectorColorHighlight: '#DDD',
   roundHeader: {
@@ -23,7 +23,7 @@ export const defaultStyle: Options = {
     separation: -13,
     homeVisitorSpread: 0.5,
   },
-  horizontalOffset: 13,
+  horizontalOffset: 5,
   wonBywalkOverText: 'WO',
   lostByNoShowText: 'NS',
 };
