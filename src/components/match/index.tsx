@@ -42,13 +42,18 @@ function Match({
     }>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <TopText>{topText}</TopText>
-        {(match.href || typeof onMatchClick === 'function') && (
+        {match.topRightText &&
+          <TopText>{match.topRightText}</TopText>
+        }
+
+        {/* Removed match details */}
+        {/* {(match.href || typeof onMatchClick === 'function') && (
           <Anchor
             href={match.href}
           >
             <TopText>Match Details</TopText>
           </Anchor>
-        )}
+        )} */}
       </div>
       <StyledMatch>
         <Side
@@ -58,8 +63,8 @@ function Match({
           team={topParty}
           hovered={topHovered}
           onClick={() => onPartyClick?.(topParty, topWon)}
-          fTeamStyles= {fTeamStyles === undefined ? undefined : () => fTeamStyles(topParty, match)}
-          >
+          fTeamStyles={fTeamStyles === undefined ? undefined : () => fTeamStyles(topParty, match)}
+        >
           <Team>{topParty?.name}</Team>
           <Score won={topWon}>{topParty?.resultText}</Score>
         </Side>
@@ -71,7 +76,7 @@ function Match({
           team={bottomParty}
           hovered={bottomHovered}
           onClick={() => onPartyClick?.(bottomParty, bottomWon)}
-          fTeamStyles= {fTeamStyles === undefined ? undefined : () => fTeamStyles(bottomParty, match)}
+          fTeamStyles={fTeamStyles === undefined ? undefined : () => fTeamStyles(bottomParty, match)}
         >
           <Team>{bottomParty?.name}</Team>
           <Score won={bottomWon}>{bottomParty?.resultText}</Score>

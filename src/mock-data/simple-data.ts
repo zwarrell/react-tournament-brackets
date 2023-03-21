@@ -1287,6 +1287,7 @@ export const simpleBracket: Match[] = [
     tournamentRoundText: '1',
     startTime: '2021-05-30',
     state: 'SCORE_DONE',
+    topRightText: "test",
     participants: [
       {
         id: '5acb196d-5f82-47f3-ae5a-2e87d070f610',
