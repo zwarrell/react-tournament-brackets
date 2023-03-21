@@ -183,11 +183,11 @@ const DoubleEliminationBracket = ({
               {/* Main bracket label */}
               <text
                 x={160}
-                y={10}
+                y={30}
                 style={{
                   fontFamily: roundHeader.fontFamily,
                   fontSize: `30px`,
-                  color: roundHeader.fontColor,
+                  color: roundHeader.backgroundColor,
                 }}
                 fill="currentColor"
                 dominantBaseline="middle"
@@ -197,7 +197,7 @@ const DoubleEliminationBracket = ({
               </text>
               <rect
                 x={25}
-                y={30}
+                y={60}
                 width={300}
                 height="2px"
                 fill={roundHeader.backgroundColor}
@@ -222,7 +222,7 @@ const DoubleEliminationBracket = ({
                 style={{
                   fontFamily: roundHeader.fontFamily,
                   fontSize: `30px`,
-                  color: roundHeader.fontColor,
+                  color: roundHeader.backgroundColor,
                 }}
                 fill="currentColor"
                 dominantBaseline="middle"
