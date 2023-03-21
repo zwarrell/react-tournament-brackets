@@ -1291,7 +1291,7 @@ export const simpleBracket: Match[] = [
     participants: [
       {
         id: '5acb196d-5f82-47f3-ae5a-2e87d070f610',
-        resultText: 'Lost',
+        resultText: "56",
         isWinner: false,
         status: 'PLAYED',
         name: 'testtesttetstst',
@@ -1299,7 +1299,7 @@ export const simpleBracket: Match[] = [
       },
       {
         id: '6d9ec9e8-d10d-424b-a00f-2078d4e08d39',
-        resultText: 'Won',
+        resultText: "80",
         isWinner: true,
         status: 'PLAYED',
         name: 'test9',

@@ -34,7 +34,16 @@ function Match({
     return null
   }
 
+  let cTopResultText = ""
+  let cBottomResultText = ""
 
+  if (topParty && topParty.resultText !== undefined) {
+    cTopResultText = topParty.resultText
+  }
+
+  if (bottomParty && bottomParty.resultText !== undefined) {
+    cBottomResultText = bottomParty.resultText
+  }
 
   return (
     <Wrapper onClick={event =>
@@ -66,7 +75,7 @@ function Match({
           fTeamStyles={fTeamStyles === undefined ? undefined : () => fTeamStyles(topParty, match)}
         >
           <Team>{topParty?.name}</Team>
-          <Score won={topWon}>{topParty?.resultText}</Score>
+          <Score won={topWon}>{cTopResultText}</Score>
         </Side>
         <Line highlighted={topHovered || bottomHovered} />
         <Side
@@ -79,7 +88,7 @@ function Match({
           fTeamStyles={fTeamStyles === undefined ? undefined : () => fTeamStyles(bottomParty, match)}
         >
           <Team>{bottomParty?.name}</Team>
-          <Score won={bottomWon}>{bottomParty?.resultText}</Score>
+          <Score won={bottomWon}>{cBottomResultText}</Score>
         </Side>
       </StyledMatch>
       <BottomText>{bottomText ?? ' '}</BottomText>
