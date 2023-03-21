@@ -1,4 +1,4 @@
-declare const ExtraFinal: ({ match, rowIndex, columnIndex, gameHeight, gameWidth, calculatedStyles, onMatchClick, onPartyClick, matchComponent, bracketSnippet, numOfUpperRounds, numOfLowerRounds, upperBracketHeight, lowerBracketHeight, }: {
+declare const ExtraFinal: ({ match, rowIndex, columnIndex, gameHeight, gameWidth, calculatedStyles, onMatchClick, onPartyClick, matchComponent, bracketSnippet, numOfUpperRounds, numOfLowerRounds, upperBracketHeight, lowerBracketHeight, fTeamStyles, }: {
     match: any;
     rowIndex: any;
     columnIndex: any;
@@ -13,5 +13,6 @@ declare const ExtraFinal: ({ match, rowIndex, columnIndex, gameHeight, gameWidth
     numOfLowerRounds: any;
     upperBracketHeight: any;
     lowerBracketHeight: any;
+    fTeamStyles: any;
 }) => JSX.Element;
 export default ExtraFinal;

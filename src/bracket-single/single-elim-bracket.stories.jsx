@@ -33,6 +33,11 @@ const Template = ({ ...args }) => {
     <SingleElimBracketLeaderboard
       onMatchClick={(match) => { console.log(match) }}
       // currentRound={4}
+      fTeamStyles={(oParticipant, oTeam) =>{
+        return {
+          background: Math.random() > .5 ? "red" : "green"
+        }
+      }}
       svgWrapper={({ children, ...props }) => (
         <StyledSvgViewer width={finalWidth} height={finalHeight}
           {...props}>

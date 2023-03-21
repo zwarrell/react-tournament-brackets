@@ -538,7 +538,11 @@ export const simpleBracket: Match[] = [
         status: 'PLAYED',
         name: 'test87',
         picture: 'teamlogos/client_team_default_logo',
-        cBackgroundColor: "green"
+        oStyles: {
+          background: "red",
+          border: "1px solid pink",
+          textDecoration: "line-through"
+        }
       },
       {
         id: 'c266ef2c-eab7-4b14-b41a-03265b6dfd74',
@@ -547,7 +551,9 @@ export const simpleBracket: Match[] = [
         status: 'PLAYED',
         name: 'adamamd',
         picture: null,
-        cBackgroundColor: "red",
+        oStyles: {
+          background: "green",
+        }
       },
     ],
   },

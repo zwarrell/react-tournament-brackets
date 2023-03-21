@@ -26,6 +26,7 @@ function Match({
   topParty,
   topText,
   topWon,
+  fTeamStyles,
 }: MatchComponentProps) {
 
   // Hide match component
@@ -57,7 +58,8 @@ function Match({
           team={topParty}
           hovered={topHovered}
           onClick={() => onPartyClick?.(topParty, topWon)}
-        >
+          fTeamStyles= {fTeamStyles === undefined ? undefined : () => fTeamStyles(topParty, match)}
+          >
           <Team>{topParty?.name}</Team>
           <Score won={topWon}>{topParty?.resultText}</Score>
         </Side>
@@ -69,6 +71,7 @@ function Match({
           team={bottomParty}
           hovered={bottomHovered}
           onClick={() => onPartyClick?.(bottomParty, bottomWon)}
+          fTeamStyles= {fTeamStyles === undefined ? undefined : () => fTeamStyles(bottomParty, match)}
         >
           <Team>{bottomParty?.name}</Team>
           <Score won={bottomWon}>{bottomParty?.resultText}</Score>

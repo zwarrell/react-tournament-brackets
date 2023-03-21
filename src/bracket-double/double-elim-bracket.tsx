@@ -68,6 +68,7 @@ const DoubleEliminationBracket = ({
   options: { style: inputStyle } = {
     style: defaultStyle,
   },
+  fTeamStyles,
 }: DoubleElimLeaderboardProps) => {
   const style = {
     ...defaultStyle,
@@ -179,6 +180,28 @@ const DoubleEliminationBracket = ({
                   calculatedStyles,
                 }}
               />
+              {/* Main bracket label */}
+              <text
+                x={160}
+                y={10}
+                style={{
+                  fontFamily: roundHeader.fontFamily,
+                  fontSize: `30px`,
+                  color: roundHeader.fontColor,
+                }}
+                fill="currentColor"
+                dominantBaseline="middle"
+                textAnchor="middle"
+              >
+                Main Bracket
+              </text>
+              <rect
+                x={25}
+                y={30}
+                width={300}
+                height="2px"
+                fill={roundHeader.backgroundColor}
+              />
               <UpperBracket
                 {...{
                   columns: upperColumns,
@@ -189,6 +212,7 @@ const DoubleEliminationBracket = ({
                   onMatchClick,
                   onPartyClick,
                   matchComponent,
+                  fTeamStyles
                 }}
               />
               {/* Loser bracket label */}
@@ -208,7 +232,7 @@ const DoubleEliminationBracket = ({
               </text>
               <rect
                 x={25}
-                y={upperBracketDimensions.gameHeight + 30}
+                y={upperBracketDimensions.gameHeight + 20}
                 width={300}
                 height="2px"
                 fill={roundHeader.backgroundColor}
@@ -223,6 +247,7 @@ const DoubleEliminationBracket = ({
                   onPartyClick,
                   matchComponent,
                   upperBracketHeight: upperBracketDimensions.gameHeight,
+                  fTeamStyles
                 }}
               />
               <FinalGame
@@ -246,6 +271,7 @@ const DoubleEliminationBracket = ({
                   matchComponent,
                   onMatchClick,
                   onPartyClick,
+                  fTeamStyles
                 }}
               />
               {finalsArray?.length > 1 && (
@@ -268,6 +294,7 @@ const DoubleEliminationBracket = ({
                     matchComponent,
                     onMatchClick,
                     onPartyClick,
+                    fTeamStyles
                   }}
                 />
               )}

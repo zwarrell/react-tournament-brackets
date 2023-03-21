@@ -22,6 +22,7 @@ export default function RoundHeader({
   tournamentRoundText,
   columnIndex,
 }: RoundHeaderProps) {
+  return null  // Remove round headers
   return (
     <g>
       <rect

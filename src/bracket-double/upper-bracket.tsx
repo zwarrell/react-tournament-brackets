@@ -12,6 +12,7 @@ const UpperBracket = ({
   onMatchClick,
   onPartyClick,
   matchComponent,
+  fTeamStyles
 }) => {
   const { canvasPadding, columnWidth, rowHeight, roundHeader } =
     calculatedStyles;
@@ -70,6 +71,7 @@ const UpperBracket = ({
               onPartyClick={onPartyClick}
               style={calculatedStyles}
               matchComponent={matchComponent}
+              fTeamStyles={fTeamStyles}
             />
           </g>
         </g>

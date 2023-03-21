@@ -1,4 +1,4 @@
-declare const UpperBracket: ({ columns, calculatedStyles, gameHeight, gameWidth, onMatchClick, onPartyClick, matchComponent, }: {
+declare const UpperBracket: ({ columns, calculatedStyles, gameHeight, gameWidth, onMatchClick, onPartyClick, matchComponent, fTeamStyles }: {
     columns: any;
     calculatedStyles: any;
     gameHeight: any;
@@ -6,5 +6,6 @@ declare const UpperBracket: ({ columns, calculatedStyles, gameHeight, gameWidth,
     onMatchClick: any;
     onPartyClick: any;
     matchComponent: any;
+    fTeamStyles: any;
 }) => any;
 export default UpperBracket;

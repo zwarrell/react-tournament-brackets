@@ -24,6 +24,7 @@ const SingleEliminationBracket = ({
   options: { style: inputStyle } = {
     style: defaultStyle,
   },
+  fTeamStyles,
 }: SingleElimLeaderboardProps) => {
   const style = {
     ...defaultStyle,
@@ -166,6 +167,7 @@ const SingleEliminationBracket = ({
                           onPartyClick={onPartyClick}
                           style={style}
                           matchComponent={matchComponent}
+                          fTeamStyles={fTeamStyles}
                         />
                       </g>
                     </g>

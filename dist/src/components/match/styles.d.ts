@@ -12,6 +12,7 @@ interface SideProps {
     won?: boolean;
     hovered?: boolean;
     team?: Participant;
+    fTeamStyles?: any;
 }
 export declare const Side: import("styled-components").StyledComponent<"div", any, SideProps, never>;
 interface LineProps {

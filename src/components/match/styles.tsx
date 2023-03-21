@@ -1,6 +1,22 @@
 import styled, { css } from 'styled-components';
 import { Participant } from 'types';
 
+function camelToSnake(string) {
+  return string.replace(/([a-z]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+};
+
+function objectToCSS(oObject) {
+  if (oObject === undefined || oObject === null) {
+    return ""
+  }
+  let cCSS = ""
+  for (const cKey in oObject) {
+      const cValue = oObject[cKey];
+      cCSS += `${camelToSnake(cKey)}: ${cValue};\r\n`
+  }
+  return cCSS
+}
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,14 +66,15 @@ interface SideProps {
   won?: boolean;
   hovered?: boolean;
   team?: Participant;
+  fTeamStyles?: any;
 }
+// background: ${({ theme, team }: any) => team.cBackgroundColor || theme.matchBackground.defaultColor};
 export const Side = styled.div<SideProps>`
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 0 0 0 1rem;
-  background: ${({ theme, team }: any) => team.cBackgroundColor || theme.matchBackground.defaultColor};
 
   :first-of-type {
     border-top-right-radius: 3px;
@@ -75,6 +92,11 @@ export const Side = styled.div<SideProps>`
   border-bottom: 1px solid ${({ theme }) => theme.border.color};
 
   transition: border-color 0.5s ${({ theme }) => theme.transitionTimingFunction};
+
+  ${({ fTeamStyles }: any) => {
+    return fTeamStyles === undefined ? "" : objectToCSS(fTeamStyles())
+  }}
+
   ${Team} {
     color: ${({ theme, won }: any) =>
     won ? theme.textColor.highlighted : theme.textColor.dark};

@@ -1,4 +1,4 @@
-declare const LowerBracket: ({ columns, calculatedStyles, gameHeight, gameWidth, onMatchClick, onPartyClick, matchComponent, upperBracketHeight, }: {
+declare const LowerBracket: ({ columns, calculatedStyles, gameHeight, gameWidth, onMatchClick, onPartyClick, matchComponent, upperBracketHeight, fTeamStyles, }: {
     columns: any;
     calculatedStyles: any;
     gameHeight: any;
@@ -7,5 +7,6 @@ declare const LowerBracket: ({ columns, calculatedStyles, gameHeight, gameWidth,
     onPartyClick: any;
     matchComponent: any;
     upperBracketHeight: any;
+    fTeamStyles: any;
 }) => any;
 export default LowerBracket;

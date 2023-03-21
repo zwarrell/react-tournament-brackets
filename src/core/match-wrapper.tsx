@@ -17,6 +17,7 @@ function Match({
   matchComponent: MatchComponent,
   onMatchClick,
   onPartyClick,
+  fTeamStyles,
   ...rest
 }) {
   const {
@@ -130,6 +131,7 @@ function Match({
               bottomText,
               connectorColor,
               computedStyles,
+              fTeamStyles,
             }}
           />
         )}

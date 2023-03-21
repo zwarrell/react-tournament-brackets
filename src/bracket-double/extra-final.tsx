@@ -19,6 +19,7 @@ const ExtraFinal = ({
   numOfLowerRounds,
   upperBracketHeight,
   lowerBracketHeight,
+  fTeamStyles,
 }) => {
   const { canvasPadding, columnWidth, rowHeight, roundHeader } =
     calculatedStyles;
@@ -69,6 +70,7 @@ const ExtraFinal = ({
           onPartyClick={onPartyClick}
           style={calculatedStyles}
           matchComponent={matchComponent}
+          fTeamStyles={fTeamStyles}
         />
       </g>
     </>

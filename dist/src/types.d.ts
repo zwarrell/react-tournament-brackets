@@ -82,6 +82,7 @@ export type MatchComponentProps = {
     computedStyles?: ComputedOptions;
     teamNameFallback: string;
     resultFallback: (participant: Participant) => string;
+    fTeamStyles: (participant: Participant, match: Match) => any;
 };
 export type Theme = {
     fontFamily: string;
@@ -137,10 +138,12 @@ export type BracketLeaderboardProps = CommonTreeProps & {
 };
 export type SingleElimLeaderboardProps = BracketLeaderboardProps & {
     matches: Match[];
+    fTeamStyles?: (participant: Participant, match: Match) => any;
 };
 export type DoubleElimLeaderboardProps = BracketLeaderboardProps & {
     matches: {
         upper: Match[];
         lower: Match[];
     };
+    fTeamStyles?: (participant: Participant, match: Match) => any;
 };
