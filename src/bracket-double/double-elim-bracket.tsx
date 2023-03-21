@@ -186,7 +186,7 @@ const DoubleEliminationBracket = ({
                 y={30}
                 style={{
                   fontFamily: roundHeader.fontFamily,
-                  fontSize: `30px`,
+                  fontSize: `24px`,
                   color: roundHeader.backgroundColor,
                 }}
                 fill="currentColor"
@@ -197,7 +197,7 @@ const DoubleEliminationBracket = ({
               </text>
               <rect
                 x={25}
-                y={60}
+                y={50}
                 width={300}
                 height="2px"
                 fill={roundHeader.backgroundColor}
@@ -221,7 +221,7 @@ const DoubleEliminationBracket = ({
                 y={upperBracketDimensions.gameHeight}
                 style={{
                   fontFamily: roundHeader.fontFamily,
-                  fontSize: `30px`,
+                  fontSize: `24px`,
                   color: roundHeader.backgroundColor,
                 }}
                 fill="currentColor"
