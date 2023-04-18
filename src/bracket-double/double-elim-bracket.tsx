@@ -173,7 +173,7 @@ const DoubleEliminationBracket = ({
           viewBox={`0 0 ${gameWidth} ${gameHeight}`}
         >
           <MatchContextProvider>
-            <g>
+            <g id='bracketSVG'>
               <RoundHeaders
                 {...{
                   numOfRounds: totalNumOfRounds,

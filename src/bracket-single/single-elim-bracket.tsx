@@ -98,7 +98,7 @@ const SingleEliminationBracket = ({
           viewBox={`0 0 ${gameWidth} ${gameHeight}`}
         >
           <MatchContextProvider>
-            <g>
+            <g id='bracketSVG'>
               {columns.map((matchesColumn, columnIndex) =>
                 matchesColumn.map((match, rowIndex) => {
                   const { x, y } = calculatePositionOfMatch(
