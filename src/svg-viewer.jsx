@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { INITIAL_VALUE, ReactSVGPanZoom, TOOL_AUTO } from 'react-svg-pan-zoom';
 
-
 const SvgViewer = ({
   height = 500,
   width = 500,
@@ -11,6 +10,7 @@ const SvgViewer = ({
   startAt = [0, 0],
   scaleFactor = 1.1,
   customToolbar = null,
+  lHideMinimap = false,
   ...rest
 }) => {
   let oInitialValue = rest.initialValue || INITIAL_VALUE  
@@ -19,7 +19,9 @@ const SvgViewer = ({
   const [value, setValue] = useState(oInitialValue);
 
   useEffect(() => {
-    Viewer.current.pan(...startAt);
+    if (!rest.initialValue) {
+      Viewer.current.fitToViewer("center", "top")
+    }
   }, []);
 
   const valueChanged = (oNewValue) => {
@@ -44,6 +46,7 @@ const SvgViewer = ({
       onZoom={valueChanged}
       miniatureProps={{ position: 'right' }}
       customToolbar={customToolbar ?? (() => <></>)}
+      customMiniature={lHideMinimap ? () => null : undefined}
       {...rest}
     >
       {children}
