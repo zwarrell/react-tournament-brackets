@@ -26,7 +26,7 @@ function Match({
   } = useContext(matchContext);
   const computedStyles = getCalculatedStyles(style);
   const { width = 300, boxHeight = 80, connectorColor } = computedStyles;
-  const sortedTeams = teams.sort(sortTeamsSeedOrder(previousBottomMatch));
+  const sortedTeams = teams // .sort(sortTeamsSeedOrder(previousBottomMatch));
 
   const topParty = sortedTeams?.[0] ? sortedTeams[0] : {};
   const bottomParty = sortedTeams?.[1] ? sortedTeams[1] : {};
